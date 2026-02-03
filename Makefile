@@ -1,10 +1,7 @@
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror -Iinclude
 
-SRC = main.c \
-      src/repository.c \
-      src/service.c \
-			src/utils.c
+SRC = main.c $(wildcard src/*.c)
 
 OBJ = $(SRC:.c=.o)
 
