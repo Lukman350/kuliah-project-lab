@@ -159,15 +159,15 @@ int main()
 
       totalRevenue = book->price * soldCount;
 
-      SalesRecord *existingRecord = get_sales_record_by_book_code(bookCode);
-      if (existingRecord != NULL)
-      {
-        existingRecord->soldCount += soldCount;
-        existingRecord->totalRevenue += totalRevenue;
-        printf("Transaksi penjualan berhasil diperbarui.\n\n");
-        getchar();
-        break;
-      }
+      // SalesRecord *existingRecord = get_sales_record_by_book_code(bookCode);
+      // if (existingRecord != NULL)
+      // {
+      //   existingRecord->soldCount += soldCount;
+      //   existingRecord->totalRevenue += totalRevenue;
+      //   printf("Transaksi penjualan berhasil diperbarui.\n\n");
+      //   getchar();
+      //   break;
+      // }
 
       SalesRecord newRecord;
       strcpy(newRecord.bookCode, bookCode);
