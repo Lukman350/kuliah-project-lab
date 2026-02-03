@@ -47,17 +47,19 @@ void view_books()
   printf("\n");
 }
 
-void delete_book(const char *code)
+void delete_book(const int index)
 {
-  Book *book = get_book_by_code(code);
-  if (book == NULL)
+  if (index < 0 || (size_t)index >= BOOK_COUNT)
   {
-    printf("Buku dengan kode %s tidak ditemukan.\n\n", code);
+    printf("Index buku tidak valid.\n\n");
     return;
   }
 
-  delete_book_by_code(code);
-  printf("Buku dengan kode %s berhasil dihapus.\n\n", code);
+  int deleted = delete_book_by_index(index);
+  if (deleted)
+    printf("Data Successfully delete..\n\n");
+  else
+    printf("Buku dengan indeks %d tidak ditemukan\n\n", index);
 }
 
 void save_all_books()
@@ -78,14 +80,14 @@ void create_sales_record(const char *bookCode, int soldCount)
 
   float totalRevenue = book->price * soldCount;
 
-  SalesRecord *existingRecord = get_sales_record_by_book_code(bookCode);
-  if (existingRecord != NULL)
-  {
-    existingRecord->soldCount += soldCount;
-    existingRecord->totalRevenue += totalRevenue;
-    printf("Transaksi penjualan berhasil diperbarui.\n\n");
-    return;
-  }
+  // SalesRecord *existingRecord = get_sales_record_by_book_code(bookCode);
+  // if (existingRecord != NULL)
+  // {
+  //   existingRecord->soldCount += soldCount;
+  //   existingRecord->totalRevenue += totalRevenue;
+  //   printf("Transaksi penjualan berhasil diperbarui.\n\n");
+  //   return;
+  // }
 
   SalesRecord newRecord;
   strcpy(newRecord.bookCode, bookCode);

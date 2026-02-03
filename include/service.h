@@ -6,7 +6,7 @@
 // Book Service
 void create_book(const char *name, const char *type, float price);
 void view_books();
-void delete_book(const char *code);
+void delete_book(const int index);
 void save_all_books();
 
 // SalesRecord Service

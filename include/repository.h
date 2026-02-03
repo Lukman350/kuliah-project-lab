@@ -11,7 +11,7 @@ extern FILE *salesRecordFile;
 void add_book(Book newBook);
 void get_all_books(Book **output, size_t *count);
 Book *get_book_by_code(const char *code);
-void delete_book_by_code(const char *code);
+int delete_book_by_index(const int index);
 void save_books();
 
 // SalesRecord Model

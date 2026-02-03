@@ -64,11 +64,11 @@ int main()
     }
     case 5: // Delete Book
     {
-      char code[16] = "";
-      printf("Masukkan kode buku yang akan dihapus: ");
-      fgets(code, sizeof(code), stdin);
-      code[strcspn(code, "\n")] = 0; // Remove newline character
-      delete_book(code);
+      int index;
+      printf("Masukkan indeks buku yang akan dihapus: ");
+      scanf("%d", &index);
+
+      delete_book(index);
 
       getchar();
       break;

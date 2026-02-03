@@ -40,22 +40,24 @@ Book *get_book_by_code(const char *code)
   return NULL;
 }
 
-void delete_book_by_code(const char *code)
+int delete_book_by_index(const int index)
 {
   for (size_t i = 0; i < BOOK_COUNT; i++)
   {
-    if (strcmp(BOOKS[i].code, code) == 0)
+    if (i != (size_t)index)
+      continue;
+
+    // Shift remaining books
+    for (size_t j = i; j < BOOK_COUNT - 1; j++)
     {
-      // Shift remaining books
-      for (size_t j = i; j < BOOK_COUNT - 1; j++)
-      {
-        BOOKS[j] = BOOKS[j + 1];
-      }
-      BOOK_COUNT--;
-      BOOKS = realloc(BOOKS, BOOK_COUNT * sizeof(Book)); // Resize array
-      return;
+      BOOKS[j] = BOOKS[j + 1];
     }
+    BOOK_COUNT--;
+    BOOKS = realloc(BOOKS, BOOK_COUNT * sizeof(Book)); // Resize array
+    return 1;
   }
+
+  return 0;
 }
 
 void save_books()

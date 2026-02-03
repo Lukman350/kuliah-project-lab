@@ -1,2 +1,1 @@
-BK002|Lorem Ipsum|Pendidikan|50000
 BK003|Lorem Ipsum Dolor|Horror|40000
