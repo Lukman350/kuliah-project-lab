@@ -53,41 +53,41 @@ SalesRecord *SALES_RECORDS = NULL;
 size_t salesRecordCount = 0;
 
 // MENU
-void print_menu();
-void print_sort_menu();
+void print_menu();      // untuk menampilkan menu utama
+void print_sort_menu(); // untuk menampilkan menu sorting
 
 // UI
-void clear_screen();
-void wait_and_back_to_menu();
-void press_any_key();
+void clear_screen();          // untuk membersihkan layar
+void wait_and_back_to_menu(); // menunggu input user sebelum kembali ke menu
+void press_any_key();         // menunggu user menekan tombol apapun
 
 // ERROR
-int read_int(const char *prompt, int *outValue);
-char read_char_choice(const char *prompt);
+int read_int(const char *prompt, int *outValue); // membaca input integer dengan validasi
+char read_char_choice(const char *prompt);       // membaca input karakter pilihan
 
 // CURD
-void get_all_books(Book **output, size_t *count);
-void get_all_sales_records(SalesRecord **output, size_t *count);
-Book *get_book_by_code(const char *code);
-SalesRecord *get_sales_record_by_book_code(const char *bookCode);
+void get_all_books(Book **output, size_t *count);                 // untuk mengambil semua data buku dari file
+void get_all_sales_records(SalesRecord **output, size_t *count);  // untuk mengambil semua data catatan penjualan dari file
+Book *get_book_by_code(const char *code);                         // untuk mendapatkan data buku berdasarkan kode
+SalesRecord *get_sales_record_by_book_code(const char *bookCode); // untuk mendapatkan data catatan penjualan berdasarkan kode buku
 
-void add_book(Book newBook);
-void add_sales_record(SalesRecord newRecord);
+void add_book(Book newBook);                  // menambahkan data buku baru
+void add_sales_record(SalesRecord newRecord); // menambahkan data catatan penjualan baru
 
-int delete_sales_record_by_index(size_t index);
-int delete_book_by_index(size_t index);
+int delete_sales_record_by_index(size_t index); // menghapus data catatan penjualan berdasarkan index
+int delete_book_by_index(size_t index);         // menghapus data buku berdasarkan index
 
-void save_books();
-void save_sales_records();
-char *generate_book_code();
-char *get_last_book_code();
+void save_books();          // untuk menyimpan data buku ke file
+void save_sales_records();  // untuk menyimpan data catatan penjualan ke file
+char *generate_book_code(); // untuk menghasilkan kode buku baru
+char *get_last_book_code(); // untuk mendapatkan kode buku terakhir
 
 // SORT
-Book *clone_books(const Book *source, size_t count);
-void show_books(const Book *arr, size_t count);
+Book *clone_books(const Book *source, size_t count); // mengkloning array buku
+void show_books(const Book *arr, size_t count);      // untuk menampilkan daftar buku
 
-void sort_books_by_name_bubble_asc(Book *arr, size_t count);
-void sort_books_by_price_selection_desc(Book *arr, size_t count);
+void sort_books_by_name_bubble_asc(Book *arr, size_t count);      // mengurutkan buku berdasarkan nama (Ascending, Bubble Sort)
+void sort_books_by_price_selection_desc(Book *arr, size_t count); // mengurutkan buku berdasarkan harga (Descending, Selection Sort)
 
 int main()
 {
