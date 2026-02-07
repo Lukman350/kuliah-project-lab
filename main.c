@@ -1,3 +1,19 @@
+/**
+ * @file main.c
+ * @author Kelompok 2
+ * @brief Program Manajemen Toko Buku Literasi Nusantara Jaya
+ * @version 1.0
+ * @date 2026-02-07
+ *
+ * Anggota Kelompok:
+ * - Lukman Nul Hakim (2902765562)
+ * - Kevin Handoko (2902770871)
+ * - Mukhammad Syaifudin Adn (2902774951)
+ * - Justin Deryl Ferdinand (2902786781)
+ *
+ * Note: Jenny Choirul Fahrubi (2902791453) - Inactive
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
