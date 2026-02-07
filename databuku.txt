@@ -1,2 +1,3 @@
 BK001|Algorithm and Programming|Pendidikan|75000
 BK002|CB: Pancasila|Pendidikan|74000
+BK003|Buku Fisika|Pelajaran|50000
